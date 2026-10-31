@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.egg-info/
+*.traj.json
+.pytest_cache/
+.env
+set-key.ps1

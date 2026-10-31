@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zen-agent"
+dynamic = ["version"]
+description = "A minimal bash-only software engineering agent (feature-aligned with mini-swe-agent)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml",
+    "jinja2",
+    "pydantic>=2.0",
+    "rich",
+    "typer",
+    "openai>=1.40,!=1.100.0,!=1.100.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+zen = "zenagent.run.mini:app"
+
+[tool.setuptools.dynamic]
+version = { attr = "zenagent.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["zenagent*"]
+
+[tool.setuptools.package-data]
+zenagent = ["config/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -7,6 +7,7 @@ name = "zen-agent"
 dynamic = ["version"]
 description = "A minimal bash-only software engineering agent (feature-aligned with mini-swe-agent)"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.10"
 dependencies = [
     "pyyaml",
